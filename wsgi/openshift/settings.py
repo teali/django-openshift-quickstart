@@ -37,6 +37,8 @@ if ON_OPENSHIFT:
      DEBUG = False
 else:
      DEBUG = True
+     STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),
+                            '/var/www/static/',)
 
 TEMPLATE_DEBUG = DEBUG
 

@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Beateq</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}beateq/style.css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://connect.soundcloud.com/sdk.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}beateq/script.js"></script>
+		<link rel="stylesheet" href="{{ STATIC_URL }}beateq/alertify.core.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}beateq/alertify.default.css">
+		<script type="text/javascript" src="{{ STATIC_URL }}beateq/alertify.js"></script>
+	</head>
+
+	<body>
+		<div class="overlay_create">
+			<div class="overlay_frame">
+				<h1>Create New Playlist</h1>
+				<form class="overlay_form" action="">
+					<p>Name:</p>
+					<input class="form_text" name="name" placeholder="Name"><br>
+					<p>Password(Optional):</p>
+					<input class="form_text password" type="password" name="password" placeholder="Password(Optional)"><br>
+					<input class="form_button submit" type="submit" value="Create">
+					<div class="form_button cancel"><p>Cancel</p></div>
+				</form>
+			</div>	
+			<div class="created">
+				<p>The playlist <span style="font-weight:bold">test</span> has already been created, click here to go to it.</p>
+			</div>			
+		</div>
+		<div class="header">
+			<div class="logo">
+				<p>Beate<span style="color:#FF851B">Q</span></p>
+			</div>
+			<div class="search">
+				<i class="fa fa-search fa-lg"></i>
+			</div>
+		</div>
+		
+		<div class="main_des">
+			<p>Collaborate on your playlists.</p>
+		</div>
+		<div class="create_playlist">
+			<p>Create my playlist</p>
+		</div>
+		<div class="search_result_container">
+			<i class="fa fa-spinner fa-spin fa-lg loading_results"></i>
+			<div class="search_text">
+				<p id="search_for">Start typing:</p>				
+				<p class="search_type"></p>
+			</div>
+			<div class="search_results">
+				<!--
+				<div class="search_column">
+					<div class="result_entry">
+						<img class="album_art" src="art_default.jpg">
+						<p class="song_name">Shake it off</p>
+						<p class="song_artist">Test Artist</p>
+					</div>
+				</div>
+				!-->
+			</div>
+		</div>
+		<div class="search_container">
+			<p>Type to start searching for music</p>
+		</div>
+	</body>
+</html>

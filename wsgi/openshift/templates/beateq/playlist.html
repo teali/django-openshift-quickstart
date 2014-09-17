@@ -1,0 +1,160 @@
+
+<html>
+	<head>
+		<title>Beateq</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}beateq/style.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}beateq/player.css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+		<script src="https://connect.soundcloud.com/sdk.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}beateq/script.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}beateq/playlist.js"></script>
+		<link rel="stylesheet" href="{{ STATIC_URL }}beateq/alertify.core.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}beateq/alertify.default.css">
+		<script type="text/javascript" src="{{ STATIC_URL }}beateq/alertify.js"></script>	
+
+	</head>
+
+	<body>
+		<div class="overlay_create">
+			<div class="overlay_frame">
+				<h1>Create New Playlist</h1>
+				<form class="overlay_form" action="">
+					<p>Name:</p>
+					<input class="form_text" name="name" placeholder="Name"><br>
+					<p>Password(Optional):</p>
+					<input class="form_text" type="password" name="password" placeholder="Password(Optional)"><br>
+					<input class="form_button" type="submit" value="Create">
+					<div class="form_button"><p>Cancel</p></div>
+				</form>
+			</div>				
+		</div>
+
+		<div class="overlay_username">
+			<p>Pick a username:</p>
+			<input class="input_username" type="text" placeholder="">
+			<p class="username_prompt">Hit enter.</p>
+		</div>
+
+		<div class="search_hint">
+			<p>Start typing to search for songs!</p>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<p>Beate<span style="color:#FF851B">Q</span></p>
+			</div>
+			<div class="header_info">
+				<p class="playlist_name">{{ playlist_name }}</p>
+				<div class="current_user_container">
+					<p class="current_songs">0</p>
+					<i class="fa fa-music"></i>	
+					<p class="current_user">-</p>
+					<i class="fa fa-user"></i>					
+				</div>
+			</div>
+			<div class="search">
+				<i class="fa fa-search fa-lg"></i>
+			</div>
+		</div>
+
+		<div class="bqplayer">
+			<img class="album_art" src="{{ STATIC_URL }}beateq/art_default.jpg">			
+			<div class="display">
+				<div class="controls">
+					<div class="previous">
+						<i class="fa fa-step-backward fa-lg"></i>
+					</div>
+					<div class="play">
+						<i class="fa fa-play fa-2x"></i>
+					</div>
+					<div class="forward">
+						<i class="fa fa-step-forward fa-lg"></i>
+					</div>
+				</div>
+				<div class="info">
+					<p class="title"></p>
+					<p class="artist"></p>
+				</div>
+				<div class="volume">
+					<i class="fa fa-volume-down fa-lg"></i>
+					
+					<div class="volume_bg">
+						<div class="volume_marker"></div>
+					</div>
+					<div class="volume_progress"></div>
+				</div>
+			</div>
+			<div class="seekbar">
+				<div class="seek_marker">
+					<div class="seek_marker_inner"></div>
+				</div>
+				<div class="seek_bg"></div>
+				<div class="seek_load"></div>
+				<div class="seek_progress"></div>
+				<p class="seek_time">--:--</p>
+			</div>
+			<audio controls="controls">
+		      <source src="" type="audio/mpeg"></source>
+		    </audio>			
+		</div>
+		<div class="playlist_block"></div>
+		<div class="song_container">
+			<div class="block"></div>
+			
+			<!--<div class="song playing">
+				<img class="song_album_art" src="https://i1.sndcdn.com/artworks-000046316242-muwce1-large.jpg?e76cf77">
+				<div class="song_info">
+					<p class="song_item_name">Shake It Off</p>
+					<p class="song_item_artist">Taylor Swift</p>
+				</div>
+				<img class="song_close" src="cross.jpg">
+				<div class="upload_user">
+					<p class="user">Teali</p>
+					<p class="user_block" style="display:none;">Block</p>
+					<p class="user_divider" style="display:none;">|</p>
+					<p class="user_admin" style="display:none;">Admin</p>
+				</div>
+							
+			</div>
+			<div class="song">
+				<img class="song_album_art" src="https://i1.sndcdn.com/artworks-000046316242-muwce1-large.jpg?e76cf77">
+				<div class="song_info">
+					<p class="song_item_name">Get Jinxed</p>
+					<p class="song_item_artist">League Of Legends</p>
+				</div>
+				<img class="song_close" src="cross.jpg">
+				<div class="upload_user">
+					<p class="user">YMDRazor</p>
+					<p class="user_block" style="display:none;">Block</p>
+					<p class="user_divider" style="display:none;">|</p>
+					<p class="user_admin" style="display:none;">Admin</p>
+				</div>			
+			</div>!-->
+			
+			<div class="block"></div>
+		</div>
+
+		<div class="search_result_container">
+			<i class="fa fa-spinner fa-spin fa-lg loading_results"></i>
+			<div class="search_text">
+				<p id="search_for">Start typing:</p>				
+				<p class="search_type"></p>
+			</div>
+			<div class="search_results">
+				<!--
+				<div class="search_column">
+					<div class="result_entry">
+						<img class="album_art" src="art_default.jpg">
+						<p class="song_name">Shake it off</p>
+						<p class="song_artist">Test Artist</p>
+					</div>
+				</div>
+				!-->
+			</div>
+		</div>
+		<div class="search_container">
+			<p>Type to start searching for music</p>
+		</div>
+	</body>
+</html>
